@@ -10,13 +10,19 @@ from app.utils.parsers import parse_file
 # Note: Ensure GOOGLE_API_KEY is set in environment variables
 embeddings = GoogleGenerativeAIEmbeddings(model="models/text-embedding-004")
 
-# Persistent Directory for ChromaDB
-PERSIST_DIRECTORY = "./chroma_db"
+# Global in-memory vector store for cloud deployment
+_vector_store = None
 
 def get_vector_store():
-    if os.path.exists(PERSIST_DIRECTORY):
-        return Chroma(persist_directory=PERSIST_DIRECTORY, embedding_function=embeddings)
-    return Chroma(persist_directory=PERSIST_DIRECTORY, embedding_function=embeddings)
+    """
+    Get or create an in-memory ChromaDB instance.
+    This approach works with cloud platforms that don't support persistent storage.
+    """
+    global _vector_store
+    if _vector_store is None:
+        # Create in-memory ChromaDB (no persist_directory = in-memory)
+        _vector_store = Chroma(embedding_function=embeddings)
+    return _vector_store
 
 def ingest_file(filename: str, content: bytes):
     text_content = parse_file(filename, content)
@@ -34,11 +40,12 @@ def ingest_file(filename: str, content: bytes):
     # Add to Vector Store
     vector_store = get_vector_store()
     vector_store.add_documents(documents)
-    vector_store.persist()
     
     return len(documents)
 
 def clear_knowledge_base():
-    if os.path.exists(PERSIST_DIRECTORY):
-        import shutil
-        shutil.rmtree(PERSIST_DIRECTORY)
+    """
+    Clear the in-memory knowledge base by resetting the global vector store.
+    """
+    global _vector_store
+    _vector_store = None

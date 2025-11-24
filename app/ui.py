@@ -2,9 +2,10 @@ import streamlit as st
 import requests
 import json
 import graphviz
+import os
 
-# Backend API URL
-API_URL = "http://localhost:8000"
+# Backend API URL - use environment variable for deployment, fallback to localhost
+API_URL = os.getenv("BACKEND_URL", "http://localhost:8000")
 
 st.set_page_config(
     page_title="AI QA Genesis - Autonomous Testing Agent", 

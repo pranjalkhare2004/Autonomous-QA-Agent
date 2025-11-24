@@ -12,22 +12,6 @@ This project is an Autonomous QA Agent that ingests project documentation and HT
 
 ## Setup
 
-1.  **Install Dependencies**:
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-2.  **Environment Variables**:
-    Create a `.env` file in the root directory and add your Google Gemini API Key:
-    ```
-    GOOGLE_API_KEY=your_api_key_here
-    ```
-
-## Running the Application
-
-1.  **Start the Backend (FastAPI)**:
-    ```bash
-    uvicorn app.main:app --reload
     ```
     The API will run at `http://localhost:8000`.
 
