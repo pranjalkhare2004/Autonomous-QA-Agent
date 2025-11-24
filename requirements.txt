@@ -1,11 +1,12 @@
 fastapi
-uvicorn
+uvicorn[standard]
 streamlit
-google-generativeai
-chromadb
 langchain
 langchain-google-genai
-python-multipart
+langchain-community
+chromadb
 beautifulsoup4
-selenium
+python-multipart
 python-dotenv
+google-generativeai
+graphviz
