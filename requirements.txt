@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+streamlit
+google-generativeai
+chromadb
+langchain
+langchain-google-genai
+python-multipart
+beautifulsoup4
+selenium
+python-dotenv
