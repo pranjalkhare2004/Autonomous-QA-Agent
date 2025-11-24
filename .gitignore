@@ -3,28 +3,31 @@
 
 # Vector database storage
 chroma_db/
-
-# Python cache
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-.Python
+# Environment variables
+.env
 
 # Virtual environment
 .venv/
 venv/
-ENV/
+env/
+
+# ChromaDB storage (now using in-memory)
+chroma_db/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyc
+*.pyo
 
 # IDE
 .vscode/
 .idea/
-*.swp
-*.swo
 
 # OS
 .DS_Store
 Thumbs.db
 
-# Streamlit
+# Logs
+*.log
 .streamlit/
