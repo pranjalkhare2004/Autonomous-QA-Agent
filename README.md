@@ -12,7 +12,7 @@
 
 **Transform documentation into executable test cases and Selenium scripts using the power of AI**
 
-[🚀 Live Demo](https://autonomous-qa-agent-isn6.onrender.com) • [📚 Documentation](DOCUMENTATION.md) • [🔧 Deployment Guide](DEPLOYMENT.md)
+[🚀 Live Demo](https://pranjal-s-autonomous-agent.streamlit.app/) • [📚 Documentation](DOCUMENTATION.md) • [🔧 Deployment Guide](DEPLOYMENT.md)
 
 </div>
 
@@ -277,8 +277,8 @@ Autonomous-QA-Agent/
 
 ### Live Production URLs
 
-- **🌐 Frontend**: Streamlit Cloud (Free)
-- **⚡ Backend**: https://autonomous-qa-agent-isn6.onrender.com (Free)
+- **🌐 Frontend**: https://pranjal-s-autonomous-agent.streamlit.app/
+- **⚡ Backend**: https://autonomous-qa-agent-isn6.onrender.com
 
 ### Deploy Your Own
 
