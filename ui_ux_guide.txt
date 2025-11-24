@@ -1,0 +1,8 @@
+UI/UX Guidelines
+
+1. Form Validation:
+   - Form validation errors must be displayed in red text.
+   - Required fields must be clearly marked.
+
+2. Buttons:
+   - The 'Pay Now' button should be green (#pay-now-btn).
